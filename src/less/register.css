@@ -1,0 +1,103 @@
+@charset "utf-8";
+* {
+  padding: 0px;
+  margin: 0px;
+}
+body {
+  background-color: #f9f9f9;
+}
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+.box {
+  width: 854px;
+  height: 562px;
+  background-color: white;
+  margin: 0 auto;
+}
+.box .logo {
+  width: 786px;
+  height: 88px;
+  text-align: center;
+}
+.box .title {
+  width: 786px;
+  height: 88px;
+  text-align: center;
+}
+.box .inputbox {
+  width: 600px;
+  height: 50px;
+  line-height: 50px;
+  margin-top: 10px;
+  margin: 0 auto;
+}
+.box .inputbox p {
+  float: left;
+  margin-left: 30px;
+  width: 80px;
+}
+.box .inputbox input {
+  float: left;
+  margin-left: 30px;
+  width: 300px;
+  height: 40px;
+}
+.box .inputbox span {
+  margin-left: 10px;
+}
+.box #submit {
+  width: 100px;
+  height: 50px;
+  display: block;
+  margin: 0 auto;
+}
+.box .msg {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 14px;
+  color: #9d9d9d;
+}
+.box .msg a {
+  color: #333;
+  font-weight: bold;
+}
+.footer {
+  color: #9d9d9d;
+  text-align: center;
+  height: 30px;
+  width: 100%;
+}
+.footer ul {
+  width: 400px;
+  height: 20px;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 30px;
+}
+.footer ul li {
+  float: left;
+  padding: 0 10px;
+}
+.footer ul li:nth-child(1) {
+  margin-left: 40px;
+}
+.footer ul li a {
+  color: #757575;
+  font-size: 14px;
+}
+.footer ul li a:hover {
+  color: black;
+}
+.nf-intro {
+  text-align: center;
+  font-size: 14px;
+  color: #757575;
+  height: 40px;
+}
+.nf-intro a {
+  color: #757575;
+}

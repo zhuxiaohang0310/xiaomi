@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../less/login.css">
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <a href="index.html"><img src="../imgs/login_logo.png" alt=""></a>
+    </div>
+    <div class="banner">
+        <div class="login">
+            <div class="login_header">
+                <a href="">账号登录</a><span id="line"></span>
+                <a href="">扫码登录
+                    <div class="login_ewm">
+                        <img src="../imgs/下载.png " alt="">
+                        <p>使用小米商城APP扫一扫</p>
+                        <p>小米手机可打开「设置」>「小米帐号」扫码登录</p>
+                    </div>
+                </a>
+            </div>
+            <div class="login_form">
+                <input type="text" name="username" id="username" placeholder="用户名">
+                <input type="password" name="password" id="password" placeholder="密码">
+                <button class="login_btn">登入</button>
+                <p> <a href="register.html">立即注册</a> <a href="">忘记密码</a> </p>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="footer">
+        <ul>
+            <li>
+                <a href="">简介</a><span>&nbsp;|</span>
+            </li>
+            <li>
+                <a href="">繁体</a><span>&nbsp;|</span>
+            </li>
+            <li>
+                <a href="">English</a><span>&nbsp;|</span>
+            </li>
+            <li>
+                <a href="">常见问题</a><span>&nbsp;|</span>
+            </li>
+            <li>
+                <a href="">隐私政策</a><span>&nbsp;</span>
+            </li>
+        </ul>
+    </div>
+    <p class="nf-intro"><span>小米公司版权所有-京ICP备10046444-<a class="beianlink beian-record-link" target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802020134"><span><img src="https://account.xiaomi.com/static/res/9204d06/account-static/respassport/acc-2014/img/ghs.png"></span>京公网安备11010802020134号</a>-京ICP证110507号</span>
+    </p>
+    <script>
+        document.cookie = "username=，请登录"
+
+        $('.login_btn').on('click', function() {
+            $.get('../php/login.php', {
+                username: $('#username').val(),
+                password: $('#password').val()
+            }, function(data) {
+                var data = JSON.parse(data);
+                if (data.login) {
+                    location.href = "index.html";
+                } else {
+                    alert('用户名或密码不正确,请重新输入');
+                }
+            })
+            document.cookie = "username=" + $('#username').val(); //利用cookie保存用户名id
+        })
+    </script>
+
+</body>
+
+</html>

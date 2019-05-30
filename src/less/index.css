@@ -1,0 +1,314 @@
+li {
+  list-style: none;
+}
+a {
+  color: black;
+}
+a:hover {
+  color: black;
+  text-decoration: none;
+}
+.navbar {
+  border-radius: 0;
+  background-color: #333;
+  min-height: 40px;
+  color: #b0b0b0;
+  font-size: 12px;
+  margin-bottom: 0px;
+}
+.navbar ul li a {
+  padding: 0px;
+  line-height: 40px;
+}
+.navbar ul li:hover {
+  color: aliceblue;
+}
+.navbar ul li span {
+  width: 3px;
+  height: 17px;
+  margin: 0 .5em;
+  color: #424242;
+}
+.navbar .container-fluid {
+  margin: 0 40px;
+}
+/* 导航栏下面部分 */
+.newnav {
+  width: 100%;
+  height: 100px;
+  margin: 0 auto;
+  padding: 0 50px;
+  margin-bottom: 10px;
+  position: relative;
+}
+.newnav > a {
+  float: left;
+  display: block;
+  width: 55px;
+  height: 55px;
+  background: url(../imgs/mi-logo.png) no-repeat 50% 50%;
+  background-color: orangered;
+  margin-top: 25px;
+}
+.newnav > ul {
+  float: left;
+  margin-left: 100px;
+}
+.newnav > ul > li {
+  float: left;
+  font-size: 16px;
+  line-height: 100px;
+}
+.newnav > ul > li > a {
+  padding: 26px 10px 38px;
+}
+.newnav > ul > li > a:hover {
+  color: orangered;
+}
+.newnav > ul > li:hover .box0 {
+  display: block;
+}
+.search {
+  position: absolute;
+  top: 25px;
+  right: 100px;
+  z-index: 1;
+  width: 223px;
+  height: 48px;
+  padding: 0 10px;
+  border: 1px solid #e0e0e0;
+  font-size: 14px;
+  line-height: 48px;
+  outline: 0;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+.submit {
+  position: absolute;
+  right: 49px;
+  top: 25px;
+  z-index: 2;
+  width: 52px;
+  height: 48px;
+  border: 1px solid #e0e0e0;
+  font-size: 24px;
+  line-height: 24px;
+  background: #fff;
+  color: #616161;
+  outline: 0;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+.submit:hover {
+  background-color: orangered;
+}
+.box0 {
+  display: none;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 230px;
+  background-color: #fff;
+  z-index: 10;
+}
+.box0 li {
+  float: left;
+  width: 180px;
+  padding: 35px 12px 0px 12px;
+}
+.box0 img {
+  display: block;
+  width: 160px;
+  height: 110px;
+  border-right: 1px solid #e0e0e0;
+}
+.box0 a {
+  display: block;
+}
+.box0 div:nth-child(2) {
+  width: 100%;
+  height: 20px;
+  line-height: 20px;
+  font-size: 12px;
+  margin-top: 20px;
+  color: black;
+  text-align: center;
+}
+.box0 div:nth-child(3) {
+  width: 100%;
+  height: 20px;
+  line-height: 20px;
+  font-size: 12px;
+  color: orangered;
+  text-align: center;
+}
+/* 轮播部分css */
+#lb {
+  width: 95%;
+}
+/* 广告1 */
+.ggao1 {
+  display: block;
+  width: 100%;
+  height: 120px;
+  padding: 0 50px;
+  background: url('../imgs/pp.jpg') no-repeat center;
+  background-size: 93%;
+  background-color: white;
+  margin-bottom: 40px;
+}
+/* 商品展示部分 */
+.product {
+  width: 100%;
+  height: 750px;
+  background-color: #f5f5f5;
+}
+.product .thumbnail {
+  padding: 0px;
+}
+.product a {
+  border: 0px;
+  transition: all .2s linear;
+}
+.product .container {
+  width: 95%;
+}
+.product .container h2 {
+  display: block;
+  float: left;
+  font-size: 22px;
+}
+.product .row div {
+  width: 20%;
+  border: none;
+}
+.product .row div a {
+  height: 300px;
+}
+.product .row div a .flag-new {
+  width: 64px;
+  height: 20px;
+  background-color: #83c44e;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+}
+.product .row div a .flag-newred {
+  width: 64px;
+  height: 20px;
+  background-color: #e53935;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+}
+.product .row div a .flag-newwhite {
+  width: 64px;
+  height: 20px;
+  background-color: white;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+}
+.product .row div a img {
+  width: 160px;
+  height: 160px;
+}
+.product .row div a:hover {
+  margin-top: -4px;
+  margin-bottom: 24px;
+  box-shadow: 3px 3px 10px#b0b0b0;
+}
+.product .row p {
+  text-align: center;
+  font-size: 14px;
+}
+.product .title1 {
+  margin-top: 20px;
+  width: 100%;
+  height: 60px;
+}
+.product .title1 div {
+  height: 30px;
+  font-size: 16px;
+  float: right;
+  margin-top: 20px;
+  line-height: 30px;
+}
+.product .title1 div:hover a {
+  color: orangered;
+}
+/* 广告 */
+.ggao {
+  display: block;
+  width: 100%;
+  height: 120px;
+  padding: 0 50px;
+  background: url('../imgs/ggao2.jpg') no-repeat center;
+  background-size: 93%;
+  background-color: #f5f5f5;
+}
+/* 家电部分 */
+.jiadian .title1 div {
+  margin-left: 20px;
+}
+.jiadian .row img {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 30px;
+}
+.jiadian .row .last01 {
+  padding-top: 30px;
+  height: 140px;
+  background-color: white;
+  margin-bottom: 20px;
+  position: relative;
+}
+.jiadian .row .last01 .last01-box1 {
+  font-size: 14px;
+  position: absolute;
+  width: 80px;
+  margin-top: 10px;
+  left: 30px;
+}
+.jiadian .row .last01 .last01-box2 {
+  position: absolute;
+  margin-top: 40px;
+  left: 30px;
+  color: orangered;
+}
+.jiadian .row .last01 .last01-box2 span {
+  color: orangered;
+}
+.jiadian .row .last01 img {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  right: 0px;
+}
+.jiadian .row .last02 {
+  padding-top: 30px;
+  height: 140px;
+  background-color: white;
+  position: relative;
+}
+.jiadian .row .last02 .last02-box1 {
+  font-size: 18px;
+  position: absolute;
+  width: 80px;
+  margin-top: 10px;
+  left: 30px;
+}
+.jiadian .row .last02 .last02-box2 {
+  position: absolute;
+  margin-top: 40px;
+  left: 30px;
+  font-size: 12px;
+  color: #757575;
+}
+.jiadian .row .last02 .last02-box3 {
+  position: absolute;
+  right: 30px;
+  color: orangered;
+  font-size: 48px;
+  line-height: 120px;
+}

@@ -1,0 +1,226 @@
+li {
+    list-style: none;
+}
+
+a {
+    color: black;
+}
+
+a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+.navbar {
+    border-radius: 0;
+    background-color: #333;
+    min-height: 40px;
+    color: #b0b0b0;
+    font-size: 12px;
+    margin-bottom: 0px;
+}
+
+.navbar ul li a {
+    padding: 0px;
+    line-height: 40px;
+}
+
+.navbar ul li:hover {
+    color: aliceblue;
+}
+
+.navbar ul li span {
+    width: 3px;
+    height: 17px;
+    margin: 0 .5em;
+    color: #424242;
+}
+
+.navbar .container-fluid {
+    margin: 0 40px;
+}
+
+
+/* 导航栏下面部分 */
+
+.newnav {
+    width: 100%;
+    height: 100px;
+    margin: 0 auto;
+    padding: 0 50px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.newnav>a {
+    float: left;
+    display: block;
+    width: 55px;
+    height: 55px;
+    background: url(../imgs/mi-logo.png) no-repeat 50% 50%;
+    background-color: orangered;
+    margin-top: 25px;
+}
+
+.newnav>ul {
+    float: left;
+    margin-left: 100px;
+}
+
+.newnav>ul>li {
+    float: left;
+    font-size: 16px;
+    line-height: 100px;
+}
+
+.newnav>ul>li>a {
+    padding: 26px 10px 38px;
+}
+
+.newnav>ul>li>a:hover {
+    color: orangered;
+}
+
+.search {
+    position: absolute;
+    top: 25px;
+    right: 100px;
+    z-index: 1;
+    width: 223px;
+    height: 48px;
+    padding: 0 10px;
+    border: 1px solid #e0e0e0;
+    font-size: 14px;
+    line-height: 48px;
+    outline: 0;
+    -webkit-transition: all .2s;
+    transition: all .2s;
+}
+
+.submit {
+    position: absolute;
+    right: 49px;
+    top: 25px;
+    z-index: 2;
+    width: 52px;
+    height: 48px;
+    border: 1px solid #e0e0e0;
+    font-size: 24px;
+    line-height: 24px;
+    background: #fff;
+    color: #616161;
+    outline: 0;
+    -webkit-transition: all .2s;
+    transition: all .2s;
+}
+
+.submit:hover {
+    background-color: orangered;
+}
+
+.box0 {
+    display: none;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 230px;
+    background-color: #fff;
+    z-index: 10;
+}
+
+.box0 li {
+    float: left;
+    width: 180px;
+    padding: 35px 12px 0px 12px;
+}
+
+.box0 img {
+    display: block;
+    width: 160px;
+    height: 110px;
+    border-right: 1px solid #e0e0e0;
+}
+
+.box0 a {
+    display: block;
+}
+
+.box0 div:nth-child(2) {
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+    font-size: 12px;
+    margin-top: 20px;
+    color: black;
+    text-align: center;
+}
+
+.box0 div:nth-child(3) {
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+    font-size: 12px;
+    color: orangered;
+    text-align: center;
+}
+
+.newnav>ul>li:hover .box0 {
+    display: block;
+}
+
+
+/* 轮播部分css */
+
+#lb {
+    width: 95%;
+}
+
+
+/* 商品展示部分 */
+
+.product {
+    width: 100%;
+    height: 800px;
+    background-color: #f5f5f5
+}
+
+.product .container {
+    width: 95%
+}
+
+.product .container h2 {
+    display: block;
+    float: left;
+    font-size: 22px;
+}
+
+.title1 {
+    margin-top: 20px;
+    width: 100%;
+    height: 60px;
+}
+
+.title1 div {
+    height: 30px;
+    font-size: 16px;
+    float: right;
+    margin-top: 20px;
+    line-height: 30px;
+}
+
+.title1 div:hover a {
+    color: orangered;
+}
+
+.product .row div {
+    width: 20%;
+}
+
+.product .row p {
+    text-align: center;
+    font-size: 14px;
+}
+
+.product .row div:hover {
+    margin-top: -2px;
+}

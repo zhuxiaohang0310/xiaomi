@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="../less/register.css">
+</head>
+
+
+<body>
+    <div class="box">
+        <div class="logo">
+            <a href=""><img src="../imgs/milogo.png" alt=""></a>
+        </div>
+        <div class="title">
+            <p style="font-size:30px ">注册小米账号</p>
+        </div>
+        <div class="inputbox">
+            <p>用户名：</p> <input type="text" name="username" id="username"><span class="span1"></span></div>
+        <div class="inputbox">
+            <p>密码：</p><input type="password" name="password" id="password"><span class="span2"></span></div>
+        <div class="inputbox">
+            <p>确认密码：</p><input type="password" name="password2" id="password2"><span class="span3"></span></div>
+        <div class="inputbox">
+            <p>性别：</p><input type="text" name="sex" id="sex"><span class="span4"></span></div>
+        <div class="inputbox">
+            <p>邮箱：</p><input type="text" name="email" id="email"><span class="span5"></span></div>
+        <input type="submit" name="" id="submit" value="提交" class="submit">
+        <div class="msg">
+            <label class="n_checked select-privacy">
+                  <i class="icon_select"></i>注册帐号即表示您同意并愿意遵守小米 <a href="https://static.account.xiaomi.com/html/agreement/account/cn.html" class="inspect_link agreement_link" title="用户协议" target="_blank">用户协议</a>和<a href="https://www.mi.com/about/privacy/" class="inspect_link privacy_link" title=" 隐私政策 " target="_blank"> 隐私政策 </a>
+                </label>
+        </div>
+    </div>
+    <div class="footer">
+        <ul>
+            <li>
+                <a href="">简介</a><span>&nbsp;|</span>
+            </li>
+            <li>
+                <a href="">繁体</a><span>&nbsp;|</span>
+            </li>
+            <li>
+                <a href="">English</a><span>&nbsp;|</span>
+            </li>
+            <li>
+                <a href="">常见问题</a><span>&nbsp;|</span>
+            </li>
+        </ul>
+    </div>
+    <p class="nf-intro"><span>小米公司版权所有-京ICP备10046444-<a class="beianlink beian-record-link" target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802020134"><span><img src="https://account.xiaomi.com/static/res/9204d06/account-static/respassport/acc-2014/img/ghs.png"></span>京公网安备11010802020134号</a>-京ICP证110507号</span>
+    </p>
+
+    </div>
+    <script>
+        var reg = /^\w{6,16}$/;
+        var reg_email = /^([0-9A-Za-z\-_\.]+)@([0-9a-z]+\.[a-z]{2,3}(\.[a-z]{2})?)$/;
+
+        $('#username').on('keyup', function() {
+            if (reg.test($('#username').val())) {
+                $.get('../php/hasname.php', {
+                    username: $('#username').val()
+                }, function(data) {
+                    var data = JSON.parse(data);
+                    if (data.hasname) {
+                        $('.span1').html(data.msg).css('color', 'red')
+                    } else {
+                        $('.span1').html(data.msg).css('color', 'green')
+                    }
+                })
+            } else {
+                $('.span1').html('输入6到16位用户名').css('color', 'red');
+            }
+            if ($('#username').val() == "") {
+                $('.span1').empty();
+            }
+        })
+
+        $('#password2').on('keyup', function() {
+            if ($('#password2').val() != $('#password').val()) {
+                $('.span3').html('密码不一致').css('color', 'red');
+            } else {
+                $('.span3').html('密码一致').css('color', 'green');
+            }
+        })
+
+        $('#email').on('keyup', function() {
+            if (reg_email.test($('#email').val())) {
+
+                $('.span5').html('邮箱可用').css('color', 'green');
+            } else {
+                $('.span5').html('邮箱格式不正确').css('color', 'red');
+            }
+        })
+
+        $('#submit').on('click', function() {
+            $.get('../php/adduser.php', {
+                    username: $('#username').val(),
+                    password: $('#password').val(),
+                    sex: $('#sex').val(),
+                    email: $('#email').val()
+                },
+                function(data) {
+                    var data = JSON.parse(data);
+                    console.log(data.adduser);
+                    if (data.adduser == false) {
+                        alert('用户创建失败')
+                    } else {
+                        alert('用户创建成功,点击确定按键2秒后跳转登录界面');
+                        setTimeout(function() {
+                            location.href = "login.html";
+                        }, 2000)
+                    }
+                })
+
+        })
+    </script>
+</body>
+
+</html>
