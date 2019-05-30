@@ -1,4 +1,2 @@
-/dist
-/node_modules
-/gulpfile-bak.js
-/package-lock.json
+node_modules/
+dist/
