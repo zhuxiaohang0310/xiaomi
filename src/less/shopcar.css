@@ -1,0 +1,145 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+.header {
+  width: 100%;
+  height: 100px;
+  border-bottom: 2px solid orange;
+  box-sizing: border-box;
+  padding-top: 26px;
+}
+.header .header-logo {
+  float: left;
+  width: 48px;
+  height: 48px;
+  background-color: #ff6700;
+  margin-left: 60px;
+}
+.header .header-logo a {
+  display: block;
+  height: 100%;
+  background: url('../imgs/mi-logo.png') no-repeat;
+}
+.header .header-title {
+  width: 100%;
+  height: 48px;
+  position: relative;
+}
+.header .header-title h2 {
+  width: 500px;
+  font-size: 28px;
+  line-height: 48px;
+  font-weight: normal;
+  color: #424242;
+  margin-left: 160px;
+}
+.header .header-title .login {
+  position: absolute;
+  right: 100px;
+  top: 24px;
+}
+.header .header-title .login a {
+  color: #757575;
+  font-size: 12px;
+}
+.header .header-title .login span {
+  color: #757575;
+  font-size: 12px;
+}
+.header .header-title .register {
+  position: absolute;
+  right: 70px;
+  top: 24px;
+}
+.header .header-title .register a {
+  color: #757575;
+  font-size: 12px;
+}
+.main {
+  position: relative;
+  width: 100%;
+  height: 1000px;
+  background-color: #f5f5f5;
+}
+.main .img {
+  position: absolute;
+  top: 100px;
+  left: 200px;
+  width: 359px;
+  height: 273px;
+  background: url('../imgs/no-shop.png') no-repeat;
+}
+.main h2 {
+  position: absolute;
+  top: 150px;
+  left: 600px;
+  color: #b0b0b0;
+  font-size: 36px;
+}
+.main p {
+  position: absolute;
+  top: 210px;
+  left: 600px;
+  color: #b0b0b0;
+  font-size: 20px;
+}
+.main .go-login {
+  position: absolute;
+  top: 300px;
+  left: 600px;
+  width: 170px;
+  height: 50px;
+  background-color: #ff6700;
+  text-align: center;
+  line-height: 50px;
+}
+.main .go-login a {
+  color: #f5f5f5;
+}
+.main .go-index {
+  position: absolute;
+  top: 300px;
+  left: 800px;
+  width: 170px;
+  height: 50px;
+  background-color: #ff6700;
+  text-align: center;
+  line-height: 50px;
+}
+.main .go-index a {
+  color: #f5f5f5;
+}
+.main {
+  list-style: none;
+  overflow: hidden;
+}
+.main .item {
+  box-sizing: border-box;
+  padding-top: 20px;
+  background-color: white;
+  border: 1px solid black;
+  margin: 20px;
+  overflow: hidden;
+}
+.main .item > div {
+  float: left;
+  margin: 30px 20px;
+}
+.main .item .c-box input {
+  width: 20px;
+  height: 20px;
+}
+.main .item .p-img {
+  margin: 0px;
+}
+.main .item .p-img img {
+  width: 100px;
+}
+.main .item .p-title {
+  width: 500px;
+}
