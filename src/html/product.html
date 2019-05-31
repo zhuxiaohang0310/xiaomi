@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script>
+        $(function() {
+
+            var id = location.search.split("=")[1];
+
+            console.log(id);
+
+            $.ajax({
+                type: "get",
+                url: "../php/getItem.php",
+                data: {
+                    id: id
+                },
+                dataType: "json",
+                success: function(response) {
+                    var pic = JSON.parse(elm.pic);
+                    var temp = `
+                    <h1 class="title">${response.title}</h1>
+                        <div class="pic">
+                            <img src=".${pic[2].src}">    
+                        </div>
+                        <div class="p-price">
+                            <span class="yuan">￥</span>${response.price}
+                        </div>
+                        <div class="num">库存${response.num}</div>
+                        <input type="number" value="1" min="1" max="${response.num}" id="num">
+                        <input type="button" class="add" value="加入购物车">
+                        <div class="p-details">
+                            <h1>商品详细信息</h1>
+                            ${response.details}
+                        </div>
+                    `
+                }
+            });
+        })
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
