@@ -1,7 +1,6 @@
 $(function() {
     var shop = cookie.get('shop');
     if (shop) {
-
         $('.main').empty();
 
         shop = JSON.parse(shop);
@@ -39,14 +38,15 @@ $(function() {
                             单价:${elm.price}
                         </div>
                         <div class="p-num">
-                            数量：<input type="number" value="${arr[0].num}" min="1" max="${elm.num}">
+                            数量：<input type="input" style="width:60px" value="${arr[0].num}" disabled="true">
                         </div>
                         <div class="p-sum">
                             总价:${(arr[0].num*elm.price).toFixed(2)}
                         </div>
-                        <div class="del"><a class="del1" href="#">删除</a></div>
+                        <div class="del"><a class="del1" id="${elm.id}" href="javascript:;">删除</a></div>
                     </li>`;
                     $('.main').append(template);
+
                 });
             }
         });
@@ -69,13 +69,59 @@ $(function() {
     }
 })
 
-//购物车删除
+//当购物车是空的时候给main设个高度放入提示
 $(function() {
-    var a = cookie.get("shop");
-    $('.main').on('click', function(e) {
+    var a = cookie.get('shop');
+    if (a == '[]' || a == '') {
+        $(".main").css('height', '600px');
+
+        var temp = `
+        <div class="img"></div>
+        <h2>您的购物车还是空的 !</h2>
+        <p>登录后将显示您之前加入的商品</p>
+        <div class="go-index">
+            <a href="index.html">马上购物</a>
+        </div>
+    `
+
+        $('.main').append(temp);
+
+    } else {
+        $(".main").css('height', 'xx');
+    }
+})
+
+
+
+
+//删除功能
+$(function() {
+    $(".main").on('click', function(e) {
         e = e || event;
         if (e.target.className == "del1") {
+            var a = cookie.get("shop");
+            var p = JSON.parse(a);
+            console.log(p);
+            p.forEach(function(elm, i) {
+                if (elm.id == e.target.id) {
+                    p.splice($.inArray(elm, p), 1);
+                }
+            })
+            var qweqwe = JSON.stringify(p);
+            cookie.set("shop", qweqwe);
+            location.reload();
+        }
+    })
+})
 
+//全选功能
+$(function() {
+    $(".all>input").on('click', function() {
+
+        if (this.checked) {
+            $(".main").find(".c-box>input").attr('checked', 'checked');
+        } else {
+            $(".main").find(".c-box>input").removeAttr('checked');
         }
     })
 })

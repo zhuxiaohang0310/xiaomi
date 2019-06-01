@@ -29,17 +29,17 @@ $(function() {
                 <img src="../${pic[0].src1}" style="display:block;float:left; width:560px;height:560px">    
             </div> 
 
-            <div class="main-details" style="width:500px;height:560px;border:1px solid red;float:left;margin-left:100px;">
+            <div class="main-details" style="width:500px;height:560px;float:left;margin-left:100px;">
                 <div class="p-details">
                     <h1 style="font-size:24px;margin-bottom:20px">${title[0].p2}</h1>
                     <div style="font-size:14px;line-height:20px;color:#b0b0b0;margin-bottom:40px"> ${response.details}</div>
                 </div>
                 <div class="p-price">
-                    <span class="yuan" style="color:orange;font-size:18px">￥${response.price}</span>
+                    <span class="yuan" style="color:orange;font-size:36px;">￥${response.price}</span>
                 </div>
-                <div class="num">库存${response.num}</div>
-                <input type="number" value="1" min="1" max="${response.num}" id="num">
-                <input type="button" class="add" value="加入购物车">
+                <div class="num" style="font-size:16px;margin-top:60px">库存${response.num}</div>
+                选择加入购物车的数量： <input type="number" value="1" min="1" max="${response.num}" id="num"> 件</br>
+                <input type="button" class="add" value="加入购物车" style="width:300px;height:54px;text-align:center;line-height:54px;background-color:orange;border:0px;margin-top:60px" >
             </div>   
             `
             $('#detail').append(temp).find('.add').on('click', function() {

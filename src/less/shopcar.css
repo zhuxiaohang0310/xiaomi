@@ -26,7 +26,8 @@ a {
   background: url('../imgs/mi-logo.png') no-repeat;
 }
 .header .header-title {
-  width: 100%;
+  width: 1140px;
+  margin: 0 auto;
   height: 48px;
   position: relative;
 }
@@ -60,10 +61,53 @@ a {
   color: #757575;
   font-size: 12px;
 }
+.shop-title {
+  width: 100%;
+  height: 70px;
+  background-color: #f5f5f5;
+  box-sizing: border-box;
+}
+.shop-title .shop-header {
+  width: 97%;
+  height: 100%;
+  margin: 0 auto;
+  background-color: white;
+  box-sizing: border-box;
+  padding-top: 30px;
+  border-bottom: 1px solid #e0e0e0;
+}
+.shop-title .shop-header .all {
+  float: left;
+  width: 140px;
+  margin: 0 20px;
+}
+.shop-title .shop-header .all input {
+  width: 20px;
+  height: 20px;
+}
+.shop-title .shop-header .name {
+  width: 540px;
+  float: left;
+}
+.shop-title .shop-header .price {
+  width: 113px;
+  float: left;
+}
+.shop-title .shop-header .num {
+  width: 155px;
+  float: left;
+}
+.shop-title .shop-header .sum {
+  width: 136px;
+  float: left;
+}
+.shop-title .shop-header .todo {
+  float: left;
+}
 .main {
   position: relative;
   width: 100%;
-  height: 1000px;
+  overflow: hidden;
   background-color: #f5f5f5;
 }
 .main .img {
@@ -122,8 +166,8 @@ a {
   box-sizing: border-box;
   padding-top: 20px;
   background-color: white;
-  border: 1px solid black;
   margin: 20px;
+  margin-top: 0px;
   overflow: hidden;
 }
 .main .item > div {
@@ -142,4 +186,9 @@ a {
 }
 .main .item .p-title {
   width: 500px;
+}
+.allsum {
+  font-size: 60px;
+  margin: 60px;
+  float: right;
 }
