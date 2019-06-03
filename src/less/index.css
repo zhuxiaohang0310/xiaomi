@@ -313,6 +313,12 @@ a:hover {
   font-size: 48px;
   line-height: 120px;
 }
+.guessyoulike {
+  height: 430px;
+}
+.hotproduct .row .col-xs-6 {
+  width: 25%;
+}
 /* 底部 */
 .foot {
   width: 100%;

@@ -147,26 +147,28 @@ $(function() {
 
 
     $('.allselect').on('click', function() {
-        $('.allsum').empty().html('总价：');
-        arr1 = [];
-        arr2 = [];
-        var a = $('.main').find('.item')
-        var b = $.map(a, function(n) {
-            return n;
-        })
-        for (var i = 0; i < b.length; i++) {
-            var c = b[i].children[5];
-            var d = Number($(c).text())
-            arr2.push(d);
-        }
-        var span = $('<span></span>');
-        var sumprice = sum(arr2);
-        span.html(sumprice + "元");
+
         if ($('.allselect').prop('checked')) {
             $('.main').find('.c-box-checkbox').prop('checked', true);
+            $('.allsum').empty().html('总价：');
+            arr1 = [];
+            arr2 = [];
+            var a = $('.main').find('.item')
+            var b = $.map(a, function(n) {
+                return n;
+            })
+            for (var i = 0; i < b.length; i++) {
+                var c = b[i].children[5];
+                var d = Number($(c).text())
+                arr2.push(d);
+            }
+            var span = $('<span></span>');
+            var sumprice = sum(arr2);
+            span.html(sumprice + "元");
             $('.allsum').append(span);
         } else {
             $('.main').find('.c-box-checkbox').prop('checked', false);
+            $('.allsum').empty().html('总价：');
         }
     })
 })
