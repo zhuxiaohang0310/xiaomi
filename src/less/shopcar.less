@@ -218,11 +218,42 @@ a{
   }
   //底部合计
 
-  .allsum{
-    font-size: 24px;
-    margin: 60px;
-    float: right;
+
+  .allsum-box{
+    width: 100%;
+    height: 80px;
+    background-color: #f5f5f5;
+        .allsum-p1{
+          width: 97%;
+          overflow: hidden;
+          margin: 0 auto; 
+          background-color: white;
+          .allsum{
+            font-size: 24px;
+            height: 50px;
+            line-height: 50px;
+            float: right;
+            color: #ff6700;
+            }
+          .pay{
+            display: block;
+            width: 100px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            float: right;
+            background-color: #E0E0E0;
+            margin-right: 110px;
+            margin-left: 35px;
+            &:hover{
+              transition: all .2s linear;
+              background-color: #ff6700;
+            }
+          }
+        }
   }
+
+  
 
 
   

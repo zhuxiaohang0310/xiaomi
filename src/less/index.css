@@ -58,6 +58,7 @@ a:hover {
   float: left;
   font-size: 16px;
   line-height: 100px;
+  transition: all .2s linear;
 }
 .newnav > ul > li > a {
   padding: 26px 10px 38px;

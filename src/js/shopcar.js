@@ -1,7 +1,7 @@
 $(function() {
     var shop = cookie.get('shop');
     if (shop) {
-        $('.main').empty();
+        $('.noshop').remove();
         shop = JSON.parse(shop);
         // console.log(shop)
         var idList = shop.map(elm => elm.id).join();
@@ -23,6 +23,7 @@ $(function() {
                     });
                     template = `
                     <li class="item">
+
                         <div class="c-box">
                             <input type="checkbox" id="p-${elm.id}" class="c-box-checkbox">
                         </div>
@@ -90,9 +91,6 @@ $(function() {
     }
 })
 
-
-
-
 //删除功能
 $(function() {
     $(".main").on('click', function(e) {
@@ -100,7 +98,6 @@ $(function() {
         if (e.target.className == "del1") {
             var a = cookie.get("shop");
             var p = JSON.parse(a);
-            console.log(p);
             p.forEach(function(elm, i) {
                 if (elm.id == e.target.id) {
                     p.splice($.inArray(elm, p), 1);
@@ -113,53 +110,73 @@ $(function() {
     })
 })
 
-$(function() {
-    //全选
-    $(".allselect").click(function() {
-        if ($(this).attr("checked")) {
-            $(".c-box-checkbox").each(function() {
-                $(this).attr("checked", true);
-            });
-        } else {
-            $(".c-box-checkbox").each(function() {
-                if ($(this).attr("checked")) {
-                    $(this).attr("checked", false);
-                } else {
-                    $(this).attr("checked", true);
-                }
-            });
-        }
-    });
-})
-
-
-
-
-//合计功能
+//全选 
 // $(function() {
-//     $(".main").on('click', function(e) {
-//         $('.allsum').empty();
-//         e = e || event;
-//         if (e.target.className == "c-box-checkbox") {
-
-//             if (this.checked) {
-//                 var a = $("<span></span>");
-//                 var b = e.target.parentNode.parentNode;
-//                 var c = b.children[5];
-//                 $(a).html("总价：" + $(c).html() + "元");
-//                 $('.allsum').append(a)
-//             } else {
-
-//             }
-
-
+//     $('.allselect').on('click', function() {
+//         if ($('.allselect').prop('checked')) {
+//             $('.main').find('.c-box-checkbox').prop('checked', true);
+//         } else {
+//             $('.main').find('.c-box-checkbox').prop('checked', false);
 //         }
-
 //     })
 // })
 
+//合计功能
 $(function() {
-    $('.main').find('.c-box-checkbox').on('click', function() {
-        console.log(12321);
+    var arr1 = [];
+    var arr2 = [];
+    $('.main').on('click', '.c-box-checkbox', function() {
+        $('.allsum').empty().html('总价：');
+        var a = this.parentNode.parentNode;
+        var b = a.children[5];
+        var c = Number($(b).text())
+        var span = $('<span></span>');
+        if ($(this).prop('checked')) {
+            arr1.push(c);
+            var index = $.inArray(c, arr1);
+            var sumprice = sum(arr1);
+            span.html(sumprice + "元");
+            $('.allsum').append(span);
+        } else {
+            arr1.splice(index, 1);
+            var sumprice2 = sum(arr1);
+            span.html(sumprice2 + "元");
+            $('.allsum').append(span);
+        }
+    })
+
+
+    $('.allselect').on('click', function() {
+        $('.allsum').empty().html('总价：');
+        arr1 = [];
+        arr2 = [];
+        var a = $('.main').find('.item')
+        var b = $.map(a, function(n) {
+            return n;
+        })
+        for (var i = 0; i < b.length; i++) {
+            var c = b[i].children[5];
+            var d = Number($(c).text())
+            arr2.push(d);
+        }
+        var span = $('<span></span>');
+        var sumprice = sum(arr2);
+        span.html(sumprice + "元");
+        if ($('.allselect').prop('checked')) {
+            $('.main').find('.c-box-checkbox').prop('checked', true);
+            $('.allsum').append(span);
+        } else {
+            $('.main').find('.c-box-checkbox').prop('checked', false);
+        }
     })
 })
+
+
+//数组求和方法
+function sum(arr) {    
+    var len = arr.length;    
+    if (len == 0) {         return 0;     } 
+    else if (len == 1) {         return arr[0];     } 
+    else {         return arr[0] + sum(arr.slice(1)); //slice() 方法从已有的数组中返回选定的元素。
+             }
+}

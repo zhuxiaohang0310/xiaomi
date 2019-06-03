@@ -90,12 +90,12 @@
 
         $('#email').on('keyup', function() {
             if (reg_email.test($('#email').val())) {
-
                 $('.span5').html('邮箱可用').css('color', 'green');
             } else {
                 $('.span5').html('邮箱格式不正确').css('color', 'red');
             }
         })
+
 
         $('#submit').on('click', function() {
             $.get('../php/adduser.php', {
@@ -107,7 +107,8 @@
                 function(data) {
                     var data = JSON.parse(data);
                     console.log(data.adduser);
-                    if (data.adduser == false) {
+
+                    if (data.adduser == false || $('#password2').val() != $('#password').val() || reg_email.test($('#email').val()) == false) {
                         alert('用户创建失败')
                     } else {
                         alert('用户创建成功,点击确定按键2秒后跳转登录界面');
