@@ -1,0 +1,222 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+.header {
+  width: 100%;
+  height: 100px;
+  border-bottom: 2px solid orange;
+  box-sizing: border-box;
+  padding-top: 26px;
+}
+.header .header-logo {
+  float: left;
+  width: 48px;
+  height: 48px;
+  background-color: #ff6700;
+  margin-left: 60px;
+}
+.header .header-logo a {
+  display: block;
+  height: 100%;
+  background: url('../imgs/mi-logo.png') no-repeat;
+}
+.header .header-title {
+  width: 1140px;
+  margin: 0 auto;
+  height: 48px;
+  position: relative;
+}
+.header .header-title h2 {
+  width: 500px;
+  font-size: 28px;
+  line-height: 48px;
+  font-weight: normal;
+  color: #424242;
+  margin-left: 160px;
+}
+.header .header-title .login {
+  position: absolute;
+  right: 100px;
+  top: 24px;
+}
+.header .header-title .login a {
+  color: #757575;
+  font-size: 12px;
+}
+.header .header-title .login span {
+  color: #757575;
+  font-size: 12px;
+}
+.header .header-title .register {
+  position: absolute;
+  right: 70px;
+  top: 24px;
+}
+.header .header-title .register a {
+  color: #757575;
+  font-size: 12px;
+}
+.shop-title {
+  width: 100%;
+  height: 70px;
+  background-color: #f5f5f5;
+  box-sizing: border-box;
+}
+.shop-title .shop-header {
+  width: 97%;
+  height: 100%;
+  margin: 0 auto;
+  background-color: white;
+  box-sizing: border-box;
+  padding-top: 30px;
+  border-bottom: 1px solid #e0e0e0;
+}
+.shop-title .shop-header .all {
+  float: left;
+  width: 140px;
+  margin: 0 20px;
+}
+.shop-title .shop-header .all input {
+  width: 20px;
+  height: 20px;
+}
+.shop-title .shop-header .name {
+  width: 540px;
+  float: left;
+}
+.shop-title .shop-header .price {
+  width: 113px;
+  float: left;
+}
+.shop-title .shop-header .num {
+  width: 155px;
+  float: left;
+}
+.shop-title .shop-header .sum {
+  width: 136px;
+  float: left;
+}
+.shop-title .shop-header .todo {
+  float: left;
+}
+.main {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: #f5f5f5;
+}
+.main .img {
+  position: absolute;
+  top: 100px;
+  left: 200px;
+  width: 359px;
+  height: 273px;
+  background: url('../imgs/no-shop.png') no-repeat;
+}
+.main h2 {
+  position: absolute;
+  top: 150px;
+  left: 600px;
+  color: #b0b0b0;
+  font-size: 36px;
+}
+.main p {
+  position: absolute;
+  top: 210px;
+  left: 600px;
+  color: #b0b0b0;
+  font-size: 20px;
+}
+.main .go-login {
+  position: absolute;
+  top: 300px;
+  left: 600px;
+  width: 170px;
+  height: 50px;
+  background-color: #ff6700;
+  text-align: center;
+  line-height: 50px;
+}
+.main .go-login a {
+  color: #f5f5f5;
+}
+.main .go-index {
+  position: absolute;
+  top: 300px;
+  left: 800px;
+  width: 170px;
+  height: 50px;
+  background-color: #ff6700;
+  text-align: center;
+  line-height: 50px;
+}
+.main .go-index a {
+  color: #f5f5f5;
+}
+.main {
+  list-style: none;
+  overflow: hidden;
+}
+.main .item {
+  box-sizing: border-box;
+  padding-top: 20px;
+  background-color: white;
+  margin: 20px;
+  margin-top: 0px;
+  overflow: hidden;
+}
+.main .item > div {
+  float: left;
+  margin: 30px 20px;
+}
+.main .item .c-box input {
+  width: 20px;
+  height: 20px;
+}
+.main .item .p-img {
+  margin: 0px;
+}
+.main .item .p-img img {
+  width: 100px;
+}
+.main .item .p-title {
+  width: 500px;
+}
+.allsum-box {
+  width: 100%;
+  height: 80px;
+  background-color: #f5f5f5;
+}
+.allsum-box .allsum-p1 {
+  width: 97%;
+  overflow: hidden;
+  margin: 0 auto;
+  background-color: white;
+}
+.allsum-box .allsum-p1 .allsum {
+  font-size: 24px;
+  height: 50px;
+  line-height: 50px;
+  float: right;
+  color: #ff6700;
+}
+.allsum-box .allsum-p1 .pay {
+  display: block;
+  width: 100px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  float: right;
+  background-color: #E0E0E0;
+  margin-right: 110px;
+  margin-left: 35px;
+}
+.allsum-box .allsum-p1 .pay:hover {
+  transition: all .2s linear;
+  background-color: #ff6700;
+}
