@@ -16,7 +16,7 @@ const path = require('path');
 var config = {
     input: {
         html: ['./src/html/*.html'],
-        css: ['./src/css/*.css'],
+        css: ['./src/less/*.css'],
         less: ['src/less/*.less'],
         js: ['./src/js/*.js', '!./src/js/*.min.js'],
         images: ['./src/imgs/*'],

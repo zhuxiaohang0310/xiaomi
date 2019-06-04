@@ -110,7 +110,7 @@ $(function() {
     })
 })
 
-//全选 
+// //全选
 // $(function() {
 //     $('.allselect').on('click', function() {
 //         if ($('.allselect').prop('checked')) {
@@ -124,8 +124,8 @@ $(function() {
 //合计功能
 $(function() {
     var arr1 = [];
-    var arr2 = [];
     $('.main').on('click', '.c-box-checkbox', function() {
+        index = 0;
         $('.allsum').empty().html('总价：');
         var a = this.parentNode.parentNode;
         var b = a.children[5];
@@ -147,7 +147,6 @@ $(function() {
 
 
     $('.allselect').on('click', function() {
-
         if ($('.allselect').prop('checked')) {
             $('.main').find('.c-box-checkbox').prop('checked', true);
             $('.allsum').empty().html('总价：');
